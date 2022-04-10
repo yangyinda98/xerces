@@ -144,6 +144,7 @@ public class DOMTree
             } // setDocument(Document)
 
         /** Returns the document. */
+        //TODO: make the method synchronized, FIXME: the get method should compare with set method
         public Document getDocument() {
             return document;
             }
