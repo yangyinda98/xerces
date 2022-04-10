@@ -1298,11 +1298,11 @@ public class Test {
                 fData = data;
                 fNode = node;
             }
-	//TODO: change the comparing code, FIXME: The "==" shouldn't be used to compare string parameter
+
             public void handle(short operation, String key,
                                Object data, Node src, Node dst) {
                 Assertion.verify(operation == UserDataHandler.NODE_CLONED);
-                Assertion.verify(key == fKey && data == fData && src == fNode);
+                Assertion.verify(key.eauals(fKey) && data.equals(fData) && src.equals(fNode));
                 Assertion.verify(dst != null &&
                                  dst.getNodeType() == fNode.getNodeType());
                 fCalled = true;
