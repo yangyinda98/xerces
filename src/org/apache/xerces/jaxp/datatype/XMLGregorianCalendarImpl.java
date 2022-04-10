@@ -1790,7 +1790,6 @@ class XMLGregorianCalendarImpl
      * @throws java.lang.IllegalStateException if the combination of set fields
      *    does not match one of the eight defined XML Schema builtin date/time datatypes. 
      */ 
-    //TODO: rewrite code for non-null parameter, FIXME: The non-null parameter should not be passed null
     public String toXMLFormat() {
 
         QName typekind = getXMLSchemaType();
@@ -1824,6 +1823,7 @@ class XMLGregorianCalendarImpl
             // Fix 4971612: invalid SCCS macro substitution in data string
             formatString = "--%M-%D" +"%z";
         }
+	String formatString = "";
         return format(formatString);
     }
     
