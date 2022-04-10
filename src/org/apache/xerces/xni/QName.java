@@ -126,6 +126,7 @@ public class QName
     //
 
     /** Returns a clone of this object. */
+    // TODO: call super.clone() in the method, FIXME: The method require a super.clone() in clone method
     public Object clone() {
         return new QName(this);
     } // clone():Object
