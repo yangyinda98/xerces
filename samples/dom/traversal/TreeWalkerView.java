@@ -137,6 +137,7 @@ public class TreeWalkerView
     Hashtable treeNodeMap = new Hashtable();
 
     /** Constructor */
+    // TODO: Remove the dead code, FIXME: The code should not exist the dead store to local variable
     public TreeWalkerView (String filename) {
         super("TreeWalkerView: "+filename);
         try {
