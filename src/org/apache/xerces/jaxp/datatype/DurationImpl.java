@@ -417,7 +417,6 @@ class DurationImpl
      * @throws NullPointerException
      *      If the given string is null.
      */
-     //TODO: check null of value, FIXME: nullcheck of resourceidentifier should be fix by add checking 
     protected DurationImpl(String lexicalRepresentation)
         throws IllegalArgumentException {
         // only if I could use the JDK1.4 regular expression ....
@@ -425,7 +424,9 @@ class DurationImpl
         final String s = lexicalRepresentation;
         boolean positive;
         int[] idx = new int[1];
-        int length = s.length();
+	if (length != null){
+        	int length = s.length();
+	}
         boolean timeRequired = false;
         
         if (lexicalRepresentation == null) {
