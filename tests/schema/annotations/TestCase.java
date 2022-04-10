@@ -25,7 +25,7 @@ import java.net.URL;
  * @version $Id$
  */
 public class TestCase extends junit.framework.TestCase {
-
+// TODO: Delete useless code FIXME: The method shouldn't shadow only name
     public TestCase() {
     }
 
