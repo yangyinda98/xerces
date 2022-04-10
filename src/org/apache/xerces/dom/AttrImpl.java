@@ -893,6 +893,7 @@ public class AttrImpl
      * removeChild operation allows us to do so. It is not intended
      * for use by application programs.
      */
+     //TODO: Identify possible null for oldChild, FIXME: the method should consider the null for the dereference
     Node internalRemoveChild(Node oldChild, boolean replace)
         throws DOMException {
 
