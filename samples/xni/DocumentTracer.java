@@ -127,6 +127,7 @@ public class DocumentTracer
     //
 
     /** Default constructor. */
+    //TODO: Rewrite the code to avoid direct null, FIXME: non-virtual method shouldn't pass null
     public DocumentTracer() {
         this(null);
     } // <init>()
