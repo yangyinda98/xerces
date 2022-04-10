@@ -741,7 +741,6 @@ public class XMLDocumentScannerImpl
          * @throws IOException  Thrown on i/o error.
          * @throws XNIException Thrown on parse error.
          */
-	// TODO: delete the effectless code FIXME: The contdition is known useless and should be deleted
         public boolean dispatch(boolean complete)
             throws IOException, XNIException {
 
@@ -877,13 +876,6 @@ public class XMLDocumentScannerImpl
                     }
                 } while (complete || again);
 
-                if (complete) {
-                    if (fEntityScanner.scanChar() != '<') {
-                        reportFatalError("RootElementRequired", null);
-                    }
-                    setScannerState(SCANNER_STATE_ROOT_ELEMENT);
-                    setDispatcher(fContentDispatcher);
-                }
             }
             // encoding errors
             catch (MalformedByteSequenceException e) {
