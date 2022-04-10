@@ -893,7 +893,6 @@ public class AttrImpl
      * removeChild operation allows us to do so. It is not intended
      * for use by application programs.
      */
-     //TODO: Identify possible null for oldChild, FIXME: the method should consider the null for the dereference
     Node internalRemoveChild(Node oldChild, boolean replace)
         throws DOMException {
 
@@ -927,13 +926,15 @@ public class AttrImpl
                 firstChild.previousSibling = oldInternal.previousSibling;
             }
         } else {
-            ChildNode prev = oldInternal.previousSibling;
-            ChildNode next = oldInternal.nextSibling;
-            prev.nextSibling = next;
-            if (next == null) {
-                // removing last child
-                ChildNode firstChild = (ChildNode) value;
-                firstChild.previousSibling = prev;
+	    if (oldChild != null){
+		    ChildNode prev = oldInternal.previousSibling;
+		    ChildNode next = oldInternal.nextSibling;
+		    prev.nextSibling = next;
+	    }
+	    if (next == null) {
+		// removing last child
+		ChildNode firstChild = (ChildNode) value;
+		firstChild.previousSibling = prev;
             } else {
                 // removing some other child in the middle
                 next.previousSibling = prev;
